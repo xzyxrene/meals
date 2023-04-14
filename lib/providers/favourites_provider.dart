@@ -2,8 +2,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:meals/models/meal.dart';
 
-class favouriteMealsNotifier extends StateNotifier<List<Meal>> {
-  favouriteMealsNotifier() : super([]);
+class FavouriteMealsNotifier extends StateNotifier<List<Meal>> {
+  FavouriteMealsNotifier() : super([]);
 
   void toggleMealFavouriteStatus(Meal meal) {
     final mealIsFavourite = state.contains(meal);
@@ -17,6 +17,6 @@ class favouriteMealsNotifier extends StateNotifier<List<Meal>> {
 }
 
 final favouriteMealsProvider =
-    StateNotifierProvider<favouriteMealsNotifier, List<Meal>>((ref) {
-  return favouriteMealsNotifier();
+    StateNotifierProvider<FavouriteMealsNotifier, List<Meal>>((ref) {
+  return FavouriteMealsNotifier();
 });
